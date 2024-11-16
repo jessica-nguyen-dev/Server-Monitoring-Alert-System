@@ -28,8 +28,8 @@ def get_system_metrics():
 #  This function will send an email when a threshold is exceeded.
 
 def send_email(subject, body, to_email):
-    from_email = "jessica.u.nguyen.dev@gmail.com"
-    password = "caaf wxzp mwap sgqb"
+    from_email = settings.EMAIL_USERNAME
+    password = settings.EMAIL_PASSWORD
 
     # Create the email message
     msg = MIMEMultipart()                           # creates a new email message object using the MIMEMultipart class
@@ -43,7 +43,7 @@ def send_email(subject, body, to_email):
     # with MIME and handles any errors by printing an exception message.
 
     try:
-        server = smtplib.SMTP('smtp.gmail.com', 587)  # Using Gmail's SMTP server
+        server = smtplib.SMTP(settings.EMAIL_HOST, settings.EMAIL_PORT)  # Using Gmail's SMTP server
         server.starttls()
         server.login(from_email, password)
         text = msg.as_string()
@@ -90,7 +90,7 @@ def monitor_system():
 
             logging.warning(f"Disk usage exceeded {disk_threshold}%: {disk}%")
 
-        if disk > disk_threshold:
+        if battery > battery_threshold:
             subject = "Battery Alert"
             body = f"Battery level is {battery}%, which is below the threshold of {battery_threshold}%."
             send_email(subject, body, to_email)

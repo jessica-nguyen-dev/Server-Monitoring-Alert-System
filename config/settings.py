@@ -1,10 +1,10 @@
 # Email settings
-EMAIL_HOST = "smtp.example.com"             # Replace with your email provider's SMTP server
-EMAIL_PORT = 587                            # Replace with the SMTP port (usually 587 for TLS)
-EMAIL_USERNAME = "your-email@example.com"   # Your email address
-EMAIL_PASSWORD = "your-email-password"      # Your email password
-EMAIL_USE_TLS = True                        # Whether to use TLS for secure connections
-EMAIL_RECEIVER = "jessica.u.nguyen.2003@gmail.com"
+EMAIL_HOST = "smtp.gmail.com"                       # Replace with your email provider's SMTP server
+EMAIL_PORT = 587                                    # Replace with the SMTP port (usually 587 for TLS)
+EMAIL_USERNAME = "jessica.u.nguyen.dev@gmail.com"   # Your email address
+EMAIL_PASSWORD = "caaf wxzp mwap sgqb"              # Your email password
+EMAIL_USE_TLS = True                                # Whether to use TLS for secure connections (!!)
+EMAIL_RECEIVER = "jessica.u.nguyen.2003@gmail.com"  # The receiving email address
 
 # Threshold settings
 CPU_THRESHOLD = 80                          # CPU usage percentage threshold
