@@ -36,7 +36,23 @@ def send_email(subject, body, to_email):
     msg['From'] = from_email                        # defined by the monitor_system function
     msg['To'] = to_email
     msg['Subject'] = subject
-    msg.attach(MIMEText(body, 'plain'))    # attaches the body of the email to the msg in plain text format
+    #msg.attach(MIMEText(body, 'plain'))    # attaches the body of the email to the msg in plain text format
+
+    # Create plain-text and HTML versions of the email body
+    html_body = f"""
+    <html>
+        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+            <h1 style="color: #d9534f;">Alert!</h1>
+            <p>{body}</p>
+            <p style="font-size: 0.9em; color: #777;">
+                This is an automated message from your Server Monitoring System.
+            </p>
+        </body>
+    </html>
+    """
+
+    # Attach HTML formatted version to the email
+    msg.attach(MIMEText(html_body, "html"))
 
     # After connecting to Gmail's SMTP server, the program logs in with the credentials (provided above), sends an email
     # with the specified subject and body, and ensures a secure connection using TLS encryption. It formats the message
