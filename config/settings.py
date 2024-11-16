@@ -1,16 +1,15 @@
 """
-This is where you can configure the settings for the Server Monitoring and Alert System.
+Configure settings for the Server Monitoring and Alert System here.
 
-To securely set your email password, set the EMAIL_PASSWORD environment variable on your system:
-    - On Windows (Command Prompt): set EMAIL_PASSWORD=your-email-password
-    - On Windows (PowerShell): $Env:EMAIL_PASSWORD = "your-email-password"
-    - On macOS/Linux (Terminal): export EMAIL_PASSWORD=your-email-password
-    - In PyCharm, click on the three dots to the right of the run/debug buttons, click edit configuration, and add your
-      environment variable from there (make sure to name it EMAIL_PASSWORD).
+To securely set your email password, use the EMAIL_PASSWORD environment variable:
+    - Windows (Command Prompt): set EMAIL_PASSWORD=your-email-password
+    - Windows (PowerShell): $Env:EMAIL_PASSWORD = "your-email-password"
+    - macOS/Linux (Terminal): export EMAIL_PASSWORD=your-email-password
+    - In PyCharm, add the variable in the run/debug configuration.
 
-If the environment variable is not set, the default value provided here will be used for testing purposes!
+If not set, the default value will be used for testing.
 
-Other settings (like thresholds and email server details) can be customized directly in this file.
+Other settings, like thresholds and email details, can be customized in this file.
 """
 
 import os
