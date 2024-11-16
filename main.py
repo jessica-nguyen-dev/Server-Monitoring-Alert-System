@@ -2,6 +2,7 @@ import psutil                                   # monitor system metrics like CP
 import smtplib                                  # send email alerts
 from email.mime.text import MIMEText            # create email message objects that have plain text or HTML content
 from email.mime.multipart import MIMEMultipart  # create email messages that can have multiple parts
+from config import settings
 import time
 import logging
 import os
@@ -55,12 +56,14 @@ def send_email(subject, body, to_email):
 # Checks the system metrics at regular intervals and send an email if any metric exceeds the threshold.
 
 def monitor_system():
-    # Define the thresholds (e.g., 80% CPU)
-    cpu_threshold = 80
-    memory_threshold = 80
-    disk_threshold = 90
-    battery_threshold = 20
-    to_email = "jessica.u.nguyen.2003@gmail.com"
+    # Define the thresholds
+    cpu_threshold = settings.CPU_THRESHOLD
+    memory_threshold = settings.MEMORY_THRESHOLD
+    disk_threshold = settings.DISK_THRESHOLD
+    battery_threshold = settings.BATTERY_THRESHOLD
+    monitor_interval = settings.MONITOR_INTERVAL
+
+    to_email = settings.EMAIL_RECEIVER
 
     while True:
         cpu, memory, disk, battery= get_system_metrics()
@@ -96,7 +99,7 @@ def monitor_system():
         # Log general activity (even if thresholds aren't exceeded)
         logging.info(f"CPU: {cpu}%, Memory: {memory}%, Disk: {disk}%")
 
-        time.sleep(60)  # Wait for 60 seconds before checking again
+        time.sleep(monitor_interval)  # Wait for X amount of seconds before checking again
 
 if __name__ == "__main__":
     monitor_system()
