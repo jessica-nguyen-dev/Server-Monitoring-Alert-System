@@ -5,12 +5,15 @@ from monitoring.monitor import get_system_metrics
 from alerts.email_alert import send_email
 from config import settings
 
-# Set up logging configuration
+# Sets up the monitoring log
 logging.basicConfig(
     filename=os.path.join('logs', 'monitoring.log'),
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
 )
+
+# Continuously monitors system metrics (CPU, memory, disk, battery) and sends alerts if thresholds are exceeded.
+# Logs warnings for any issues and general system stats.
 
 def monitor_system():
     cpu_threshold = settings.CPU_THRESHOLD
