@@ -7,7 +7,7 @@ def send_email(subject, body, to_email):
     from_email = settings.EMAIL_USERNAME
     password = settings.EMAIL_PASSWORD
 
-    # Create the email message
+    # Create the email message (HTML)
     msg = MIMEMultipart()
     msg['From'] = from_email
     msg['To'] = to_email
@@ -22,6 +22,10 @@ def send_email(subject, body, to_email):
     </html>
     """
     msg.attach(MIMEText(html_body, "html"))
+
+    # This block connects to the email server, log in using the provided credentials,
+    # send the email message, and then closes the connection. If an error occurs during any step,
+    # it catches the exception and prints an error message.
 
     try:
         server = smtplib.SMTP(settings.EMAIL_HOST, settings.EMAIL_PORT)
