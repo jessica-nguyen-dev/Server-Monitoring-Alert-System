@@ -1,6 +1,6 @@
-# Server Monitoring and Alert System
+# System Monitoring and Alert Tool
 
-A Python-based system for monitoring server metrics (CPU, memory, disk usage, and battery) that sends email alerts when 
+A Python-based tool for monitoring system metrics (CPU, memory, disk usage, and battery) that sends email alerts when 
 certain thresholds are exceeded. 
 
 ## Features
