@@ -1,2 +1,5 @@
 2024-11-16 11:51:38,831 - WARNING - Memory usage exceeded 80%: 86.6%
 2024-11-16 11:51:40,566 - WARNING - Disk usage exceeded 90%: 93.6%
+2024-11-19 12:44:18,316 - WARNING - Memory usage exceeded 80%: 92.1%
+2024-11-19 12:44:19,560 - WARNING - Disk usage exceeded 90%: 90.3%
+2024-11-19 12:44:19,561 - INFO - CPU: 11.2%, Memory: 92.1%, Disk: 90.3%
