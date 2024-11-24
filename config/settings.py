@@ -11,7 +11,7 @@ For example, on Windows (Command Prompt or PowerShell):
     set EMAIL_USERNAME=jessica.u.nguyen.dev@gmail.com       (replace with your own if you prefer)
     set EMAIL_PASSWORD=caaf wxzp mwap sgqb                  (your app password should look like this)
 
-Other settings, like thresholds and the alert recipient, can be customized below!
+Other settings, like thresholds and the alert recipient, can be customized below!!
 """
 
 # Email settings
