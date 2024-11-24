@@ -12,7 +12,7 @@ certain thresholds are exceeded.
 
 1. Clone the repository:
    ```bash
-   git clone <https://github.com/jessica-nguyen-dev/Server-Monitoring-Alert-System.git>
+   git clone <https://github.com/jessica-nguyen-it/Server-Monitoring-Alert-System.git>
    cd <repo_folder>
 
 2. Install the required dependencies:
